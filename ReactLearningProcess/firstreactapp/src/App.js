@@ -52,26 +52,32 @@ togglePersonsHandler = () => {
       cursor: 'pointer'
     };
 
+let person = null;
+
+if(this.state.showPersons){
+  person = <div>
+  <Person
+    name={this.state.persons[0].name}
+    age={this.state.persons[0].age}
+  />
+  <Person
+    name={this.state.persons[1].name}
+    age={this.state.persons[1].age}
+    click={this.switchNameHandler.bind(this, 'Max!!')}
+    changed={this.nameChangedHandler}>This is Children Message.</Person>
+  <Person
+    name={this.state.persons[2].name}
+    age={this.state.persons[2].age} />
+</div>
+}
+
     return (
       <div className="App">
         <h1>This is Root.</h1>
         <button
           style={style}
           onClick={this.togglePersonsHandler}>Toggle</button>
-        {this.state.showPersons ? <div>
-          <Person
-            name={this.state.persons[0].name}
-            age={this.state.persons[0].age}
-          />
-          <Person
-            name={this.state.persons[1].name}
-            age={this.state.persons[1].age}
-            click={this.switchNameHandler.bind(this, 'Max!!')}
-            changed={this.nameChangedHandler}>This is Children Message.</Person>
-          <Person
-            name={this.state.persons[2].name}
-            age={this.state.persons[2].age} />
-        </div> : null}
+        {person}
       </div>
     );
   }

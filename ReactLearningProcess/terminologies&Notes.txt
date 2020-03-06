@@ -1,3 +1,6 @@
 * Higher Order Component.
 * Media Query in CSS.
 * Styled Components.
+* Tagged Template.
+* CSS Modules: External CSS file access, in react-script 2 and above we no need to eject we can simply rename css file to .module.css 
+ and do the same.

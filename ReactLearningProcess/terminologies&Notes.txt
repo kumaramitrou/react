@@ -4,3 +4,8 @@
 * Tagged Template.
 * CSS Modules: External CSS file access, in react-script 2 and above we no need to eject we can simply rename css file to .module.css 
  and do the same.
+* Stateless(Presentational/Dumb Component) is usually functional component. vs stateful component,
+* Class based component, Functional Component.
+* Class Based Component : Have Access to State, Lifecycle Hooks supported. Access State and props via "this"
+  Functional Components : Access to State (useState()). Lifecycle Hooks not supported. Access Props via "props"
+

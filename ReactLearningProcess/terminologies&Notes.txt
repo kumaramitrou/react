@@ -27,3 +27,11 @@ Component Lifecycle (Creation): constructor(props) --> getDerivedStateFromProps(
 
 Component Lifecycle (Update): getDerivedStateFromProps(props,state) --> shouldComponentUpdate(nextProps, nextState)
 		--> render() --> Update Child Component Props --> getSnapshotBeforeUpdate(prevProps, prevState)
+
+* Auxiliary component does the same thing as React.Fragment does.
+* we call setState() synchronously but its not guaranteed that it is executed immediately or currently, react schedules
+	setState(), and whenever it gets resources it updates the state.
+better way to do is return an anonymous function which will get executed, so that no dirty read should happen.
+* Using prop-types, npm install --save prop-types to set up prop types so that no wrong type should get passed.
+* Ref keyword. to focus on last input. Can pass a function and the element you get is reference to that element.
+ref = {(inputEl) => {this.inputElement = inputEl}}

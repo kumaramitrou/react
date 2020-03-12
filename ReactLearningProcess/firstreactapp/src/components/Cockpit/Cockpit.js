@@ -1,12 +1,29 @@
 import React, { useEffect } from 'react';
 
-import classes from './Cockpit.css';
+import classes from './Cockpit.module.css';
 
 const Cockpit = (props) => {
 
     // runs for every render cycle.
+    // can have multiple useEffect.
     useEffect(() => {
         console.log('[Cockpit.js] useEffect');
+
+        // Http Request.
+        setTimeout(() => {
+            alert('Saved data to cloud!');
+        }, 1000);
+        // It runs before the main useEffect function runs, but after the (first) render cycle!
+        return () => {
+            console.log('[Cockpit.js] cleanup process in useEffect.');
+        }
+    }, []);
+
+    useEffect(() => {
+        console.log('[Cockpit.js] 2nd useEffect.');
+        return () => {
+            console.log('[Cockpit.js] cleanup process in 2nd useEffect.')
+        };
     });
 
     const assignedClasses = [];
@@ -15,10 +32,10 @@ const Cockpit = (props) => {
         btnClass = classes.Red;
     }
     if (props.persons.length <= 2) {
-        assignedClasses.push(classes.red);
+        assignedClasses.push(classes.Red);
     }
     if (props.persons.length <= 1) {
-        assignedClasses.push(classes.bold);
+        assignedClasses.push(classes.Bold);
     }
 
     return (

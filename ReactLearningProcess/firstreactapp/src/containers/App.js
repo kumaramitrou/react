@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import classes from './App.module.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
+import WithClass from '../hoc/WithClass';
 
 
 class App extends Component {
@@ -97,7 +98,7 @@ class App extends Component {
     }
 
     return (
-      <div className={classes.App}>
+      <WithClass classes={classes.App}>
         <button onClick={() => {
           this.setState({showCockpit: !this.state.showCockpit});
           }}>Remove Cockpit</button>
@@ -109,7 +110,7 @@ class App extends Component {
           :null
         }
         {person}
-      </div>
+      </WithClass>
     );
   }
 }

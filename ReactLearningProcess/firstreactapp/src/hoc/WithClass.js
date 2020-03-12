@@ -6,7 +6,7 @@ import React from 'react';
 //     </div>
 // );
 
-const WithClass = (WrappedComponent, className) => {
+const withClass = (WrappedComponent, className) => {
     return props => (
         <div className={className}>
             <WrappedComponent/>
@@ -14,4 +14,4 @@ const WithClass = (WrappedComponent, className) => {
     );//Functional component.
 };
 
-export default WithClass;
+export default withClass;

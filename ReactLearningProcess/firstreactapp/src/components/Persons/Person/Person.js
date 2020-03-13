@@ -13,6 +13,7 @@ class Person extends Component {
         this.inputElementRef = React.createRef();
     }
 
+    // can be used in class based component.
     static contextType = AuthContext;
 
     // Focuses in first input html tag.

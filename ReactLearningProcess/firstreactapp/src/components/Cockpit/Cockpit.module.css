@@ -19,3 +19,12 @@
     background-color: lightgreen;
     color: black;
 }
+
+.Cockpit button.Red{
+    background-color: red;
+}
+
+.Cockpit button.Red:hover {
+    background-color: salmon;
+    color: black;
+}

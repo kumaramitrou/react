@@ -7,7 +7,6 @@ const Cockpit = (props) => {
     // Ref Implementation.
     const toggleBtnRef = useRef(null);
 
-
     // runs for every render cycle.
     // can have multiple useEffect.
     useEffect(() => {
@@ -55,6 +54,7 @@ const Cockpit = (props) => {
                 className={btnClass}
                 onClick={props.toggle}>Toggle Persons
             </button>
+            <button onClick={props.login}>Log in</button>
         </div>
     );
 };
